@@ -1,0 +1,18 @@
+# Datasets and large image folders
+datasets/
+task2_output/kvasir_capsule_balanced/
+task3_output/kvasir_capsule_augmented/
+task4_output/resized/
+
+# Raw zip files
+*.zip
+*.tar.gz
+
+# Python cache
+__pycache__/
+*.pyc
+*.pth
+*.pt
+
+# Jupyter checkpoints
+.ipynb_checkpoints/

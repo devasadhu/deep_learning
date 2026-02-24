@@ -1,0 +1,69 @@
+================================================================================
+SUMMARY OF FINDINGS
+================================================================================
+
+TASK 1: ACTIVATION FUNCTION ANALYSIS
+--------------------------------------------------------------------------------
+Sigmoid Activation:
+  • Final Accuracy: 11.70%
+  • Problem: Vanishing gradient - gradients become extremely small
+  • Loss stayed around 2.3, model couldn't learn
+
+Tanh Activation:
+  • Final Accuracy: 96.50%
+  • Better than sigmoid because outputs are centered around 0
+  • Still suffers from vanishing gradient but less severe
+
+ReLU Activation:
+  • Final Accuracy: 96.95%
+  • Best performance - no vanishing gradient for positive values
+  • Simple computation: max(0, x)
+  • Fastest convergence
+
+TASK 2: OPTIMIZER COMPARISON
+--------------------------------------------------------------------------------
+SGD (Basic):
+  • Final Accuracy: 90.45%
+  • Slowest convergence
+  • Loss curve shows unstable/bumpy descent
+
+SGD with Momentum:
+  • Final Accuracy: 96.45%
+  • Much smoother than basic SGD
+  • Momentum helps overcome local bumps in loss landscape
+
+Adam Optimizer:
+  • Final Accuracy: 97.15%
+  • Fastest convergence - reached high accuracy by epoch 3
+  • Adaptive learning rates for each parameter
+  • Best overall performance
+
+TASK 3: REGULARIZATION EFFECTS
+--------------------------------------------------------------------------------
+Without BN, Without Dropout:
+  • Accuracy: 94.30%
+  • Baseline performance
+
+Without BN, Dropout=0.1:
+  • Accuracy: 94.45%
+  • Slight improvement from regularization
+
+With BN, Dropout=0.25:
+  • Accuracy: 94.35%
+  • BatchNorm normalizes layer inputs -> stable training
+  • Dropout prevents overfitting by randomly dropping neurons
+
+REQUIRED MODELS PERFORMANCE
+--------------------------------------------------------------------------------
+CNN-1 (128 units, Adam, 10 epochs):      97.00%
+MLP-1 (512-256-128, SGD, 20 epochs):     88.90%
+MLP-2 (256 units, Adam, 15 epochs):      94.45%
+
+KEY TAKEAWAYS
+================================================================================
+1. ReLU is the best activation for deep networks (avoids vanishing gradient)
+2. Adam optimizer converges much faster than SGD variants
+3. Batch Normalization + Dropout help prevent overfitting
+4. CNN architectures generally perform better than MLP for image data
+5. More layers (MLP-1) don't always mean better performance with SGD
+================================================================================
