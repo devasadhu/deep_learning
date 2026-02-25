@@ -14,5 +14,26 @@ __pycache__/
 *.pth
 *.pt
 
-# Jupyter checkpoints
-.ipynb_checkpoints/
+# Ignore datasets
+Major_project/datasets/
+
+# Ignore all task outputs
+Major_project/task1_output/
+Major_project/task2_output/
+Major_project/task3_output/
+Major_project/task4_output/
+Major_project/task5_output/
+Major_project/task6_output/
+
+# Ignore zip and archive outputs
+Major_project/*.zip
+Major_project/**/*.zip
+Major_project/**/*.tar.gz
+
+# Ignore model weights
+Major_project/**/*.pt
+Major_project/**/*.pth
+
+# Ignore Python cache
+__pycache__/
+*.pyc
